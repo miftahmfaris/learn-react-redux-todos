@@ -10,7 +10,7 @@ function App() {
             <div
                 style={{
                     textAlign: "center",
-                    margin: "100px 500px"
+                    margin: "100px 300px"
                 }}
             >
                 <AddTodo />

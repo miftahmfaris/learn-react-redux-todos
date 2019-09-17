@@ -17,9 +17,11 @@ const TodoList = ({ todos, toggleTodo }) => (
     </ul>
 );
 
-const mapStateToProps = state => ({
-    todos: state.todos
-});
+const mapStateToProps = state => {
+    return {
+        todos: state.todos
+    };
+};
 
 const mapDispatchToProps = dispatch => ({
     toggleTodo: id => dispatch(toggleTodo(id))
