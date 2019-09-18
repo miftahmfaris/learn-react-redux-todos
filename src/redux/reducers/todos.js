@@ -1,9 +1,19 @@
-import { ADD_TODO, LIST_TODO, TOGGLE_TODO } from "../actions";
+import {
+    ADD_TODO,
+    LIST_TODO,
+    TOGGLE_TODO,
+    FETCH_DATA_SUCCESS
+} from "../actions";
 
 let nextTodo = 0;
 
 export default (state = [], action) => {
     switch (action.type) {
+        case FETCH_DATA_SUCCESS:
+            return {
+                ...state,
+                data: action.payload.data
+            };
         case ADD_TODO:
             return [
                 ...state,
