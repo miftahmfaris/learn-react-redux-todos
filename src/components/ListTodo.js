@@ -7,14 +7,12 @@ class ListTodo extends Component {
     componentDidMount() {
         this.props.fetchData();
     }
-    
-    render() {
-        console.log(this.props.todos.data, "todos");
 
+    render() {
         return (
             <ul>
-                {Array.isArray(this.props.todos.data) &&
-                    this.props.todos.data.map(todo => {
+                {this.props.todos.length > 0 &&
+                    this.props.todos.map(todo => {
                         return (
                             <Todo
                                 key={todo.id}
@@ -29,8 +27,6 @@ class ListTodo extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
-
     return {
         todos: state.todos
     };

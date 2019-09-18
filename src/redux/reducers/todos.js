@@ -10,14 +10,11 @@ let nextTodo = 0;
 export default (state = [], action) => {
     switch (action.type) {
         case FETCH_DATA_SUCCESS:
-            return {
-                ...state,
-                data: action.payload.data
-            };
+            return [...action.payload.data];
         case ADD_TODO:
             return [
                 ...state,
-                { id: nextTodo++, text: action.text, completed: false }
+                { id: nextTodo++, title: action.text, completed: false }
             ];
         case LIST_TODO:
             return [...state];
